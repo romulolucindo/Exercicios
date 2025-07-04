@@ -118,7 +118,56 @@ void main() {
   // 4) Criando a função de depósito e fazendo sua validação
   // Vamos continuar desenvolvendo o programa de banco.
   // Agora, concentre-se na operação de depósito e escreva uma função em que o usuário, após digitar um valor numérico, o insere na conta. Lembre-se de validar se a entrada é um número positivo. Caso contrário, solicite novamente até que um valor válido seja fornecido. A ideia é que o programa rode mais ou menos assim no terminal:
+  double saldoDeposito = 0;
+
+  List<String> listaDeOperacoes = [
+    "deposito",
+    // "retirada",
+    // "transferencia",
+    // "pagamento",
+  ];
+
+  print("Bem - Vindo(a) ao banco DART!, oque vc deseja hoje?:");
+  void escolhaOperacao() {
+    print("OPÇÕES VÁLIDAS: $listaDeOperacoes");
+    String? operacaoEscolhida = stdin.readLineSync();
+    if (listaDeOperacoes.contains(operacaoEscolhida)) {
+      print("Digite o valor que deseja realizar o deposito.");
+      double valorDeposito = double.parse(stdin.readLineSync()!);
+      if (valorDeposito <= 0) {
+        print("Digite apenas valores positivos > 0");
+      } else {
+        saldoDeposito += valorDeposito;
+        print("Seu saldo é de: $saldoDeposito");
+      }
+    } else {
+      print("Escolha uma opção válida pf!");
+      escolhaOperacao();
+    }
+  }
+
+  escolhaOperacao();
 
   // 5) Validação de métodos de pagamento em uma plataforma de e-commerce
   // Você está desenvolvendo uma plataforma de e-commerce onde a pessoa usuária pode escolher entre diferentes métodos de pagamento como cartao, boleto, paypal e pix. Crie uma função que solicite à pessoa usuária o método de pagamento desejado e valide se a entrada é válida, solicitando novamente em caso de erro.
+
+  List<String> listaDeMetodosDePagamento = [
+    "cartao",
+    "boleto",
+    "paypal",
+    "pix",
+  ];
+
+  print("Escolha um metodo de pagamento VÁLIDO pf: $listaDeMetodosDePagamento");
+  void metodoDePagamento() {
+    String? clienteEscolhe = stdin.readLineSync();
+    if (listaDeMetodosDePagamento.contains(clienteEscolhe)) {
+      print("Pagamento Realizado com SUCESSO!");
+    } else {
+      print("Escolha uma das opções Válidas: $listaDeMetodosDePagamento");
+      metodoDePagamento();
+    }
+  }
+
+  metodoDePagamento();
 }
