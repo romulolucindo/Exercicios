@@ -61,18 +61,18 @@ else:
 ## 6) Escreva um programa que leia três números e os exiba em ordem decrescente.
 
 lista = []
-numero1 = int(input('Digite um numero'))
+numero1 = int(input('Digite um numero: '))
 lista.append(numero1)
-numero2 = int(input('Digite mais um numero'))
+numero2 = int(input('Digite mais um numero: '))
 lista.append(numero2)
-numero3 = int(input('Digite novamente mais um numero'))
+numero3 = int(input('Digite novamente mais um numero: '))
 lista.append(numero3)
 
 print(sorted(lista, reverse=True))
 
 ## 7) Escreva um programa que pergunte em qual turno a pessoa usuária estuda ("manhã", "tarde" ou "noite") e exiba a mensagem "Bom Dia!", "Boa Tarde!", "Boa Noite!", ou "Valor Inválido!", conforme o caso.
 
-turno = int(input('Em qual turno você estuda? ( 1 = manhã, 2 = tarde, 3 = noite)'))
+turno = int(input('Em qual turno você estuda? ( 1 = manhã, 2 = tarde, 3 = noite): '))
 
 if turno == 1 :
     print('Bom Dia!')
@@ -85,7 +85,7 @@ else:
 
 ## 8) Escreva um programa que peça um número inteiro à pessoa usuária e determine se ele é par ou ímpar. Dica: Você pode utilizar o operador módulo %.
 
-numero_inteiro = int(input('Digite um número inteiro, vou te dizer se é par ou ímpar'))
+numero_inteiro = int(input('Digite um número inteiro, vou te dizer se é par ou ímpar: '))
 
 if numero_inteiro % 2 == 0 :
     print('É PAR!')
@@ -94,7 +94,7 @@ else:
 
 
 ## 9) Escreva um programa que peça um número à pessoa usuária e informe se ele é inteiro ou decimal.
-inteiro_ou_decimal = float(input('Digite um número e vou te dizer se é inteiro ou decimal!'))
+inteiro_ou_decimal = float(input('Digite um número e vou te dizer se é inteiro ou decimal!: '))
 
 if inteiro_ou_decimal == int(inteiro_ou_decimal):
     print('Inteiro')
