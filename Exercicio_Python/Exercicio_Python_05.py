@@ -72,8 +72,42 @@ else:
 
 # O do valor do desconto será a multiplicação entre preço do litro, quantidade de litros e o valor do desconto.
 # O valor a ser pago por um cliente será o resultado da multiplicação do preço do litro pela quantidade de litros menos o valor de desconto resultante do cálculo.
+preco_litro_etanol = 1.70
+preco_litro_diesel = 2.00
+tipo_combustivel = int(input('Qual o tipo de combustivel vc quer comprar? 1 - Etanol ou 2 - Diesel: '))
+qtd_litros = int(input('Digite a quantidade de litros de combustivel vc vai querer?: '))
 
-## 3) Em uma empresa de venda de imóveis você precisa criar um código que analise os dados de vendas anuais para ajudar a diretoria na tomada de decisão. O código precisa coletar os dados de quantidade de venda durante os anos de 2022 e 2023 e fazer um cálculo de variação percentual. A partir do valor da variação, deve ser enviada às seguintes sugestões:
+
+if tipo_combustivel == 1 and qtd_litros <= 15:
+    valor_bruto = qtd_litros * preco_litro_etanol
+    valor_desconto = valor_bruto * 0.02
+    valor_final = valor_bruto - valor_desconto
+    print(f'O valor a pagar é de {valor_final}')
+elif tipo_combustivel == 1 and qtd_litros > 15:
+    valor_bruto = qtd_litros * preco_litro_etanol
+    valor_desconto = valor_bruto * 0.04
+    valor_final = valor_bruto - valor_desconto
+    print(f'O valor a pagar é de {valor_final}')
+elif tipo_combustivel == 2 and qtd_litros <= 15:
+    valor_bruto = qtd_litros * preco_litro_diesel
+    valor_desconto = valor_bruto * 0.03
+    valor_final = valor_bruto - valor_desconto
+    print(f'O valor a pagar é de {valor_final}')
+elif tipo_combustivel == 2 and qtd_litros > 15:
+    valor_bruto = qtd_litros * preco_litro_diesel
+    valor_desconto = valor_bruto * 0.05
+    valor_final = valor_bruto - valor_desconto
+    print(f'O valor a pagar é de {valor_final}')
+else:
+     print('Tipo Inválido')
+     exit()
+     
+     
+
+
+
+
+## 4) Em uma empresa de venda de imóveis você precisa criar um código que analise os dados de vendas anuais para ajudar a diretoria na tomada de decisão. O código precisa coletar os dados de quantidade de venda durante os anos de 2022 e 2023 e fazer um cálculo de variação percentual. A partir do valor da variação, deve ser enviada às seguintes sugestões:
 
 # Para variação acima de 20%: bonificação para o time de vendas.
 # Para variação entre 2% e 20%: pequena bonificação para time de vendas.
