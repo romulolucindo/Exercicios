@@ -74,26 +74,26 @@ else:
 # O valor a ser pago por um cliente será o resultado da multiplicação do preço do litro pela quantidade de litros menos o valor de desconto resultante do cálculo.
 preco_litro_etanol = 1.70
 preco_litro_diesel = 2.00
-tipo_combustivel = int(input('Qual o tipo de combustivel vc quer comprar? 1 - Etanol ou 2 - Diesel: '))
+tipo_combustivel = input('Qual o tipo de combustivel vc quer comprar? E - Etanol ou D - Diesel: ').upper()
 qtd_litros = int(input('Digite a quantidade de litros de combustivel vc vai querer?: '))
 
 
-if tipo_combustivel == 1 and qtd_litros <= 15:
+if tipo_combustivel == 'E' and qtd_litros <= 15:
     valor_bruto = qtd_litros * preco_litro_etanol
     valor_desconto = valor_bruto * 0.02
     valor_final = valor_bruto - valor_desconto
     print(f'O valor a pagar é de {valor_final}')
-elif tipo_combustivel == 1 and qtd_litros > 15:
+elif tipo_combustivel == 'E' and qtd_litros > 15:
     valor_bruto = qtd_litros * preco_litro_etanol
     valor_desconto = valor_bruto * 0.04
     valor_final = valor_bruto - valor_desconto
     print(f'O valor a pagar é de {valor_final}')
-elif tipo_combustivel == 2 and qtd_litros <= 15:
+elif tipo_combustivel == 'D' and qtd_litros <= 15:
     valor_bruto = qtd_litros * preco_litro_diesel
     valor_desconto = valor_bruto * 0.03
     valor_final = valor_bruto - valor_desconto
     print(f'O valor a pagar é de {valor_final}')
-elif tipo_combustivel == 2 and qtd_litros > 15:
+elif tipo_combustivel == 'D' and qtd_litros > 15:
     valor_bruto = qtd_litros * preco_litro_diesel
     valor_desconto = valor_bruto * 0.05
     valor_final = valor_bruto - valor_desconto
@@ -113,3 +113,16 @@ else:
 # Para variação entre 2% e 20%: pequena bonificação para time de vendas.
 # Para variação entre 2% e -10%: planejamento de políticas de incentivo às vendas.
 # Para variação abaixo de -10%: corte de gastos.
+
+percentual_2022 = int(input('Quantidade de vendas de 2022: '))
+percentual_2023 = int(input('Quantidade de vendas de 2023: '))
+percentual_anual = (((percentual_2023 - percentual_2022)/percentual_2022)*100)
+
+if percentual_anual > 20:
+    print(f'A porcentagem foi de {percentual_anual:.2f}%. Bonificação para o time de vendas.')
+elif percentual_anual > 2 and percentual_anual <= 20:
+     print(f'A porcentagem foi de {percentual_anual:.2f}%. Pequena bonificação para time de vendas.')
+elif(percentual_anual >= -10 and percentual_anual <= 2):
+    print(f'A porcentagem foi de {percentual_anual:.2f}%. Planejamento de políticas de incentivo às vendas.')
+else:
+    print(f'A porcentagem foi de {percentual_anual:.2f}%. -10%: corte de gastos.')
